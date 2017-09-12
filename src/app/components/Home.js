@@ -13,8 +13,15 @@ export class Home extends React.Component{
                     <ul>
                         { this.props.user.hobbies.map((hobby, i) => <li key={i} >{ hobby }</li>) }
                     </ul>
+                    { this.props.children }
                 </div>
             </div>
         );
     }
 }
+// PropTypes via the main React package is deprecated, and will be removed in  React v16.0.
+// Home.propTypes = {
+//     name: React.PropTypes.string,
+//     age: React.PropTypes.number,
+//     user: React.PropTypes.object
+// };

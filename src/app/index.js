@@ -13,7 +13,9 @@ class App extends React.Component{
             <div className="container">
                 <Header />
                 <br />
-                <Home name={'Max'} age={27} user={user} />
+                <Home name={'Max'} age={27} user={user}>
+                    <h1 className="display-6">Insert children here</h1>
+                </Home>
             </div>
         );
     }
