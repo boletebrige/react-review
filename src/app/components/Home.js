@@ -1,6 +1,14 @@
 import React from 'react';
 
 export class Home extends React.Component{
+    constructor(props) {
+        super();
+        this.age = props.age;
+    }
+    onAdd(){
+        this.age += 2;
+        console.log(this.age);
+    }
     render(){
         let content = 'This is conetent';
         console.log(this.props.user.hobbies);
@@ -10,18 +18,11 @@ export class Home extends React.Component{
                     <h1 className="display-4">Hello { this.props.user.name } Component</h1>
                     <hr className="my-4" />
                     <p>{ content }</p>
-                    <ul>
-                        { this.props.user.hobbies.map((hobby, i) => <li key={i} >{ hobby }</li>) }
-                    </ul>
+                    <p>Age: { this.age }</p>
                     { this.props.children }
+                    <button onClick={this.onAdd.bind(this)} className="btn btn-primary">Add</button>
                 </div>
             </div>
         );
     }
 }
-// PropTypes via the main React package is deprecated, and will be removed in  React v16.0.
-// Home.propTypes = {
-//     name: React.PropTypes.string,
-//     age: React.PropTypes.number,
-//     user: React.PropTypes.object
-// };
